@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+        .items{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
+            gap: 10px;
+        }
+
+        .it{
+            background-color: #38ba97;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 3.0;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Fake Dataset:
+
+let products = [
+    { id: 701, name: "Action Camera", price: 299, category: "Electronics", stock: 20, rating: 4.8 },
+    { id: 702, name: "Toaster", price: 29, category: "Appliances", stock: 40, rating: 4.2 },
+    { id: 703, name: "Tennis Racket", price: 129, category: "Sports", stock: 60, rating: 4.5 },
+    { id: 704, name: "Dining Table", price: 799, category: "Furniture", stock: 5, rating: 4.6 },
+    { id: 705, name: "VR Headset", price: 599, category: "Electronics", stock: 15, rating: 4.9 }
+];
+// Question:
+// Display a grid of product cards with details including name, price, and rating.
+//  Ensure the layout is responsive, showing 2 cards per row on tablets and 3 cards per row on desktops.
+
+        let div = document.createElement("div")
+        div.className = "items"
+
+        products.forEach(obj =>{
+            let item = document.createElement("div")
+            item.className = "it"
+            item.innerText = `Name: ${obj.name} \n Price: ${obj.price} \n Rating: ${obj.rating}`
+
+            div.appendChild(item)
+        })
+
+        document.body.appendChild(div)
+    </script>
+</body>
+</html>

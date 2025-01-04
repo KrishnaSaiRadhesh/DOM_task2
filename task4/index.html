@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+    <style>
+           .container{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card{
+            background-color: #9cbf28;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 3.0;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Fake Dataset:
+let products = [
+    { id: 901, name: "Monitor", price: 199, category: "Electronics", stock: 50, rating: 4.6 },
+    { id: 902, name: "Microwave Oven", price: 149, category: "Appliances", stock: 20, rating: 4.4 },
+    { id: 903, name: "Fitness Tracker", price: 99, category: "Fitness", stock: 80, rating: 4.7 },
+    { id: 904, name: "Bookshelf", price: 129, category: "Furniture", stock: 10, rating: 4.3 },
+    { id: 905, name: "Gaming Keyboard", price: 99, category: "Electronics", stock: 35, rating: 4.8 }
+];
+// Question:
+// Display product cards with a clean design using CSS. Include details like name, price, and category. 
+// Ensure the grid adjusts to 1 card per row on mobile, 2 on tablets, and 4 on larger screens.
+
+
+    let div = document.createElement("div")
+    div.className = "container"
+
+    products.forEach(obj =>{
+        let item = document.createElement("div")
+        item.className = "card"
+        item.innerText = `Name: ${obj.name} \n Price: ${obj.price} \n Category: ${obj.category}`
+
+        div.appendChild(item)
+    })
+
+    document.body.appendChild(div)
+
+    </script>
+</body>
+</html>

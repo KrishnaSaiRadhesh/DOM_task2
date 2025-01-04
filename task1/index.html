@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Products_dataset{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+        }
+
+        .Items{
+            /* display: flex;
+            flex-direction: column; */
+            background-color: aqua;
+            text-align: left;
+            font-size: 1.3rem;
+            padding: 50px;
+            line-height: 2.0;
+        }
+
+        .bt{
+            font-size: 1rem;
+            border-radius: 30px;
+            padding: 5%;
+            margin-top: 5%;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+        .bt:hover{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+    // Fake Dataset:
+        let products = [
+            { id: 201, name: "Smartphone", price: 699, category: "Electronics", stock: 50, rating: 4.6 },
+            { id: 202, name: "Blender", price: 49, category: "Appliances", stock: 20, rating: 4.3 },
+            { id: 203, name: "Yoga Mat", price: 25, category: "Fitness", stock: 100, rating: 4.9 },
+            { id: 204, name: "Office Desk", price: 299, category: "Furniture", stock: 10, rating: 4.2 },
+            { id: 205, name: "Bluetooth Speaker", price: 79, category: "Electronics", stock: 60, rating: 4.7 }
+        ];
+
+        // Question: Display the products dynamically as cards on a webpage, with each card showing the 
+        // product’s name, price, category, rating, and a “Buy Now” button. Ensure the layout is responsive and visually appealing.
+
+        let div = document.createElement("div")
+        div.className = "Products_dataset"
+
+        products.forEach(obj =>{
+            let item = document.createElement("div")
+            item.className = "Items"
+            // let p = document.createElement("p")
+            item.innerText = `Product Name : ${obj.name} \n Price : ${obj.price} \n Category: ${obj.category} \n Rating: ${obj.rating} \n`
+            let btn = document.createElement("button")
+            btn.className = "bt"
+            btn.innerText = "Buy Now"
+            item.appendChild(btn)
+            div.appendChild(item)
+        })
+
+        document.body.appendChild(div)
+    </script>
+</body>
+</html>

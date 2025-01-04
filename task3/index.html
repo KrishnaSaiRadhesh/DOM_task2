@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+    <style>
+        .container{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card{
+            background-color:#bf6c28;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 3.0;
+            border-radius: 20px;
+        }
+
+        
+        @media screen and (width<600px) {
+            .container{
+                place-items: center;
+            }
+            .card{
+                height: 55vh;
+                width: 70vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Fake Dataset:
+let products = [
+    { id: 401, name: "Wireless Mouse", price: 29, category: "Accessories", stock: 150, rating: 4.5 },
+    { id: 402, name: "Portable Fan", price: 19, category: "Appliances", stock: 40, rating: 4.3 },
+    { id: 403, name: "Resistance Bands", price: 15, category: "Fitness", stock: 120, rating: 4.9 },
+    { id: 404, name: "Floor Lamp", price: 99, category: "Furniture", stock: 8, rating: 4.2 },
+    { id: 405, name: "Tablet", price: 199, category: "Electronics", stock: 25, rating: 4.7 }
+];
+// Question:
+// Create a webpage displaying product cards with details like name, price, and stock.
+//  Use CSS to create a responsive layout with cards stacking vertically on small screens.
+
+    let div = document.createElement("div")
+    div.className = "container"
+
+    products.forEach(obj =>{
+        let item = document.createElement("div")
+        item.className = "card"
+        item.innerText = `Name: ${obj.name} \n Price: ${obj.price} \n Stock: ${obj.stock}`
+
+        div.appendChild(item)
+    })
+
+    document.body.appendChild(div)
+    </script>
+</body>
+</html>
